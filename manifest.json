@@ -1,10 +1,10 @@
 {
-  "name": "Us ❤️",
+  "name": "Us ❤️ — Adarsh & Rojina",
   "short_name": "Us ❤️",
   "description": "A private space for Adarsh and Rojina",
   "start_url": "./",
   "display": "standalone",
-  "background_color": "#121212",
-  "theme_color": "#121212",
+  "background_color": "#0e1018",
+  "theme_color": "#0e1018",
   "orientation": "portrait"
 }

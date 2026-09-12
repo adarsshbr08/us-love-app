@@ -3,119 +3,99 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <meta name="theme-color" content="#121212" />
-
-  <title>Us ❤️</title>
-
+  <meta name="description" content="A private space for Adarsh and Rojina ❤️" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <title>Us ❤️ | Adarsh & Rojina</title>
   <link rel="manifest" href="manifest.json" />
   <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-
-  <!-- LOGIN SCREEN -->
-  <div id="loginScreen" class="screen">
+  <div id="loginScreen" class="screen login-screen">
     <div class="login-card">
-      <h1>Us ❤️</h1>
-      <p class="subtitle">Adarsh & Rojina's Private Space</p>
-
-      <input
-        type="email"
-        id="email"
-        placeholder="Email address"
-      />
-
-      <input
-        type="password"
-        id="password"
-        placeholder="Password"
-      />
-
-      <button id="loginBtn">Login ❤️</button>
-
-      <p id="loginError"></p>
+      <div class="heart-logo">❤️</div>
+      <h1>Us</h1>
+      <p class="subtitle">Adarsh & Rojina's private space</p>
+      <form id="loginForm">
+        <label for="email">Email</label>
+        <input type="email" id="email" autocomplete="email" placeholder="Email address" required />
+        <label for="password">Password</label>
+        <input type="password" id="password" autocomplete="current-password" placeholder="Password" required />
+        <button class="primary-btn" id="loginBtn" type="submit">Login ❤️</button>
+      </form>
+      <p id="loginError" class="error" role="alert"></p>
     </div>
   </div>
 
-
-  <!-- MAIN APP -->
   <div id="appScreen" class="screen hidden">
-
-    <header>
-      <h1>Us ❤️</h1>
-      <button id="logoutBtn">Logout</button>
+    <header class="app-header">
+      <div>
+        <p class="eyebrow">OUR LITTLE WORLD</p>
+        <h1>Adarsh <span>❤️</span> Rojina</h1>
+      </div>
+      <button id="logoutBtn" class="small-btn" type="button">Logout</button>
     </header>
 
     <main>
-
-      <!-- HOME -->
-      <section id="homeSection">
-        <h2>Adarsh ❤️ Rojina</h2>
-
-        <div class="card">
-          <h3>Our Private Space 🔐</h3>
-          <p id="welcomeText">Welcome ❤️</p>
+      <section id="homeSection" class="page-section active-section">
+        <div class="hero-card">
+          <p class="eyebrow">WELCOME HOME</p>
+          <h2 id="welcomeText">Welcome ❤️</h2>
+          <p>Two hearts, one little space.</p>
         </div>
 
+        <h2 class="section-title">Send a little love</h2>
         <div class="actions">
-          <button id="missYouBtn">🥺 I Miss You</button>
-          <button id="loveYouBtn">❤️ I Love You</button>
-          <button id="goodMorningBtn">☀️ Good Morning</button>
-          <button id="goodNightBtn">🌙 Good Night</button>
+          <button class="love-action" data-message="🥺 I miss you so much ❤️">🥺<span>I Miss You</span></button>
+          <button class="love-action" data-message="❤️ I love you, Rojina!">❤️<span>I Love You</span></button>
+          <button class="love-action" data-message="☀️ Good morning, my love ❤️">☀️<span>Good Morning</span></button>
+          <button class="love-action" data-message="🌙 Good night, sweet dreams ❤️">🌙<span>Good Night</span></button>
+        </div>
+        <p id="quickMessageStatus" class="status" aria-live="polite"></p>
+      </section>
+
+      <section id="chatSection" class="page-section">
+        <h2 class="section-title">💬 Our Chat</h2>
+        <div id="messages" class="messages" aria-live="polite">
+          <p class="empty-state">Your sweet conversations will appear here.</p>
+        </div>
+        <form id="messageForm" class="message-box">
+          <input type="text" id="messageInput" maxlength="1000" placeholder="Type something sweet... ❤️" autocomplete="off" required />
+          <button class="primary-btn" id="sendBtn" type="submit">Send</button>
+        </form>
+        <p id="chatError" class="error" role="alert"></p>
+      </section>
+
+      <section id="notesSection" class="page-section">
+        <h2 class="section-title">💌 Love Notes</h2>
+        <form id="noteForm" class="card">
+          <textarea id="loveNoteInput" maxlength="2000" placeholder="Write something for your partner..." required></textarea>
+          <button class="primary-btn" id="saveNoteBtn" type="submit">Save Note ❤️</button>
+        </form>
+        <div id="notes" class="notes-list">
+          <p class="empty-state">Your love notes will appear here.</p>
+        </div>
+        <p id="noteError" class="error" role="alert"></p>
+      </section>
+
+      <section id="memoriesSection" class="page-section">
+        <h2 class="section-title">📸 Memories</h2>
+        <div class="card memories-placeholder">
+          <div class="big-emoji">🫶</div>
+          <h3>Your memories belong here</h3>
+          <p>Add your favorite couple photos in a future update. This version keeps the section ready without pretending that photos are already stored.</p>
         </div>
       </section>
-
-
-      <!-- CHAT -->
-      <section id="chatSection">
-        <h2>💬 Our Chat</h2>
-
-        <div id="messages"></div>
-
-        <div class="message-box">
-          <input
-            type="text"
-            id="messageInput"
-            placeholder="Type something sweet... ❤️"
-          />
-
-          <button id="sendBtn">Send</button>
-        </div>
-
-        <p id="chatError"></p>
-      </section>
-
-
-      <!-- LOVE NOTES -->
-      <section>
-        <h2>💌 Love Notes</h2>
-
-        <textarea
-          id="loveNoteInput"
-          placeholder="Write something for your partner..."
-        ></textarea>
-
-        <button id="saveNoteBtn">Save Note ❤️</button>
-
-        <div id="notes"></div>
-      </section>
-
     </main>
 
-
-    <!-- BOTTOM NAVIGATION -->
-    <nav>
-      <button>🏠 Home</button>
-      <button>💬 Chat</button>
-      <button>💌 Notes</button>
-      <button>📸 Memories</button>
+    <nav class="bottom-nav" aria-label="Main navigation">
+      <button class="nav-btn active" data-target="homeSection" type="button">🏠<span>Home</span></button>
+      <button class="nav-btn" data-target="chatSection" type="button">💬<span>Chat</span></button>
+      <button class="nav-btn" data-target="notesSection" type="button">💌<span>Notes</span></button>
+      <button class="nav-btn" data-target="memoriesSection" type="button">📸<span>Memories</span></button>
     </nav>
-
   </div>
 
-
   <script type="module" src="app.js"></script>
-
 </body>
 </html>
