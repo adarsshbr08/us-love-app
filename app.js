@@ -16,7 +16,7 @@ import {
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCEAWzXg4Bwm94ltMGtps-5CT5uZs56qSl4",
+  apiKey:"AIzaSyCEAWzXg4Bwm94ltMGtps-5CTuZs56qSl4",
   authDomain: "adarsh-rojina.firebaseapp.com",
   projectId: "adarsh-rojina",
   storageBucket: "adarsh-rojina.firebasestorage.app",
