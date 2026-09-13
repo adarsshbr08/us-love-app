@@ -75,8 +75,12 @@ loginForm.addEventListener("submit", async (event) => {
       showError(loginError, "Access denied. This space is only for Adarsh and Rojina ❤️");
     }
   } catch (error) {
-    showError(loginError, "Login failed. Please check your email and password.");
-    console.error(error);
+  console.error("Firebase Login Error:", error);
+
+  showError(
+    loginError,
+    `Login Error: ${error.code || error.message}`
+  );
   }
 });
 
