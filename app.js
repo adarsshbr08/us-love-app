@@ -16,7 +16,7 @@ import {
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCEAWzXg4Bwm94ltMGtps-5CT5uZs56qSl4",
+  apiKey: "AIzaSyCEAWzXg4Bwm94ltMGtps-5CTuZs56qSl4",
   authDomain: "adarsh-rojina.firebaseapp.com",
   projectId: "adarsh-rojina",
   storageBucket: "adarsh-rojina.firebasestorage.app",
@@ -75,8 +75,12 @@ loginForm.addEventListener("submit", async (event) => {
       showError(loginError, "Access denied. This space is only for Adarsh and Rojina ❤️");
     }
   } catch (error) {
-    showError(loginError, "Login failed. Please check your email and password.");
-    console.error(error);
+  console.error("Firebase Login Error:", error);
+
+  showError(
+    loginError,
+    `Login Error: ${error.code || error.message}`
+  );
   }
 });
 
